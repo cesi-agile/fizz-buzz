@@ -10,28 +10,36 @@
     <input type="number" id="input-number" />
     <button onclick="FizzBuzzator()">Valider</button>
 
-    <!--  CESI-5 Result Front -->
     <p id="result"></p>
 
-    <!-- CESI-4 Fizz-/-Buzz-/-Fizz-Buzz -->
     <script>
       function FizzBuzzator() {
         
         const input = document.getElementById('input-number').value;
 
-        if (input % 3 === 0 && input % 5 === 0) {
-          document.getElementById('result').innerHTML = 'FizzBuzz';
-        } else if (input % 3 === 0) {
-          
-          document.getElementById('result').innerHTML = 'Fizz';
-        } else if (input % 5 === 0) {
-          
-          document.getElementById('result').innerHTML = 'Buzz';
-        } else {
-          
-          document.getElementById('result').innerHTML = input;
-        }
-      }
-    </script>
-  </body>
-</html>
+    if (fizzBuzz(1) === '1 ') {
+      console.log('Test 2 passed');
+    } else {
+      console.log('Test 2 failed');
+    }
+
+    if (fizzBuzz(15) === 'FizzBuzz ') {
+      console.log('Test 3 passed');
+    } else {
+      console.log('Test 3 failed');
+    }
+
+    if (fizzBuzz(3) === 'Fizz ') {
+      console.log('Test 4 passed');
+    } else {
+      console.log('Test 4 failed');
+    }
+
+    if (fizzBuzz(3,10) === 'Fizz 4 Buzz Fizz 7 8 Fizz Buzz ') {
+      console.log('Test 5 passed');
+    } else {
+      console.log('Test 5 failed');
+    }
+  }
+  test()
+</script>
