@@ -13,6 +13,10 @@
 
 <script>
   function fizzBuzz(start, end) {
+    if (start < 0 || end < 0) {
+      return "Please enter positive numbers";
+    }
+
     if (start > end) {
       return "Start number must be less than end number";
     }
@@ -80,6 +84,12 @@
       console.log('Test 6 passed');
     } else {
       console.log('Test 6 failed');
+    }
+
+    if (fizzBuzz(-1, 10) === 'Please enter positive numbers') {
+      console.log('Test 7 passed');
+    } else {
+      console.log('Test 7 failed');
     }
   }
   test()
