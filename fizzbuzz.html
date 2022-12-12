@@ -6,8 +6,8 @@
 <body>
 <h1>FizzBuzz</h1>
 <p>Enter a range of numbers:</p>
-<label for="start-number">Start Number: </label><input type="text" id="start-number" placeholder="Start number">
-<label for="end-number">End Number: </label><input type="text" id="end-number" placeholder="End number">
+<label for="start-number">Start Number: </label><input type="number" id="start-number" placeholder="Start number">
+<label for="end-number">End Number: </label><input type="number" id="end-number" placeholder="End number">
 <button onclick="fizzBuzzator()">Check</button>
 <p id="output"></p>
 
@@ -37,7 +37,6 @@
     // Get the input range of numbers
     let start = document.getElementById('start-number').value;
     let end = document.getElementById('end-number').value;
-
     // Display the output
     document.getElementById('output').innerHTML = fizzBuzz(start, end);
   }
@@ -47,6 +46,30 @@
       console.log('Test 1 passed');
     } else {
       console.log('Test 1 failed');
+    }
+
+    if (fizzBuzz(1) === '1 ') {
+      console.log('Test 2 passed');
+    } else {
+      console.log('Test 2 failed');
+    }
+
+    if (fizzBuzz(15) === 'FizzBuzz ') {
+      console.log('Test 3 passed');
+    } else {
+      console.log('Test 3 failed');
+    }
+
+    if (fizzBuzz(3) === 'Fizz ') {
+      console.log('Test 4 passed');
+    } else {
+      console.log('Test 4 failed');
+    }
+
+    if (fizzBuzz(3,10) === 'Fizz 4 Buzz Fizz 7 8 Fizz Buzz ') {
+      console.log('Test 5 passed');
+    } else {
+      console.log('Test 5 failed');
     }
   }
   test()
