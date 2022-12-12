@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FizzBuzzator</title>
+  </head>
+  <body>
+    <h1>FizzBuzzattor</h1>
+
+    <p>Enter a number:</p>
+    <input type="number" id="input-number" />
+    <button onclick="FizzBuzzator()">Valider</button>
+
+    <p id="result"></p>
+
+    <script>
+      function FizzBuzzator() {
+        
+        const input = document.getElementById('input-number').value;
+
+        if (input % 3 === 0 && input % 5 === 0) {
+          document.getElementById('result').innerHTML = 'FizzBuzz';
+        } else if (input % 3 === 0) {
+          
+          document.getElementById('result').innerHTML = 'Fizz';
+        } else if (input % 5 === 0) {
+          
+          document.getElementById('result').innerHTML = 'Buzz';
+        } else {
+          
+          document.getElementById('result').innerHTML = input;
+        }
+      }
+    </script>
+  </body>
+</html>
