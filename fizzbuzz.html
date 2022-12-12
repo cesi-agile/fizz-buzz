@@ -6,13 +6,17 @@
 <body>
 <h1>FizzBuzz</h1>
 <p>Enter a range of numbers:</p>
-<label for="start-number">Start Number: </label><input type="number" id="start-number" placeholder="Start number">
-<label for="end-number">End Number: </label><input type="number" id="end-number" placeholder="End number">
+<label for="start-number">Start Number: </label><input min="0" type="number" id="start-number" placeholder="Start number">
+<label for="end-number">End Number: </label><input min="0" type="number" id="end-number" placeholder="End number">
 <button onclick="fizzBuzzator()">Check</button>
 <p id="output"></p>
 
 <script>
   function fizzBuzz(start, end) {
+    if (start > end) {
+      return "Start number must be less than end number";
+    }
+
     if (end === undefined || end === '') {
       end = start;
     }
@@ -70,6 +74,12 @@
       console.log('Test 5 passed');
     } else {
       console.log('Test 5 failed');
+    }
+
+    if (fizzBuzz(10,3) === 'Start number must be less than end number') {
+      console.log('Test 6 passed');
+    } else {
+      console.log('Test 6 failed');
     }
   }
   test()
