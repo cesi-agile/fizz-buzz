@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FizzBuzzator</title>
-  </head>
-  <body>
-    <h1>FizzBuzzattor</h1>
+<head>
+  <title>FizzBuzz</title>
+</head>
+<body>
+<h1>FizzBuzz</h1>
+<p>Enter a range of numbers:</p>
+<label for="start-number">Start Number: </label><input type="text" id="start-number" placeholder="Start number">
+<label for="end-number">End Number: </label><input type="text" id="end-number" placeholder="End number">
+<button onclick="fizzBuzzator()">Check</button>
+<p id="output"></p>
 
-    <p>Enter a number:</p>
-    <input type="number" id="input-number" />
-    <button onclick="FizzBuzzator()">Valider</button>
+<script>
+  function fizzBuzzator() {
+    // Get the input range of numbers
+    let start = document.getElementById('start-number').value;
+    let end = document.getElementById('end-number').value;
+    if (end === undefined || end === '') {
+      end = start;
+    }
+    let output = '';
 
-    <p id="result"></p>
-
-    <script>
-      function FizzBuzzator() {
-        
-        const input = document.getElementById('input-number').value;
-
-        if (input % 3 === 0 && input % 5 === 0) {
-          document.getElementById('result').innerHTML = 'FizzBuzz';
-        } else if (input % 3 === 0) {
-          
-          document.getElementById('result').innerHTML = 'Fizz';
-        } else if (input % 5 === 0) {
-          
-          document.getElementById('result').innerHTML = 'Buzz';
-        } else {
-          
-          document.getElementById('result').innerHTML = input;
-        }
+    // Loop through the range of numbers and check each one
+    for (let i = start; i <= end; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        output += 'FizzBuzz ';
+      } else if (i % 3 === 0) {
+        output += 'Fizz ';
+      } else if (i % 5 === 0) {
+        output += 'Buzz ';
+      } else {
+        output += i + ' ';
       }
-    </script>
-  </body>
-</html>
+    }
+
+    // Display the output
+    document.getElementById('output').innerHTML = output;
+  }
+</script>
